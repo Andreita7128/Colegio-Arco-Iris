@@ -1,0 +1,348 @@
+/* 🎨 VARIABLES GLOBALES REORDENADAS */
+:root {
+    /* 💜 VIOLET */
+    --violet-light100: #E9E1F2;
+    --violet-light200: #D2C3E5;
+    --violet-light300: #BCA5D7;
+    --color-violet: #A587CA;
+    --violet-dark500: #8860B9;
+    --violet-dark600: #6C459C;
+    --violet-dark700: #513475;
+
+    /* 💙 CYAN */
+    --cyan-light100: #CDF3F6;
+    --cyan-light200: #9AE7EE;
+    --cyan-light300: #68DAE5;
+    --color-cyan: #36CEDC;
+    --cyan-dark500: #22B5C2;
+    --cyan-dark600: #1B919C;
+    --cyan-dark700: #146D75;
+
+    /* 💚 GREEN */
+    --green-light100: #E3FAD9;
+    --green-light200: #C7F4B4;
+    --green-light300: #ABEF8E;
+    --color-green: #8FE968;
+    --green-dark500: #6BE237;
+    --green-dark600: #4FC41D;
+    --green-dark700: #3B9315;
+
+    /* 💛 YELLOW */
+    --yellow-light100: #FFFAD5;
+    --yellow-light200: #FFF4AB;
+    --yellow-light300: #FFEF80;
+    --color-yellow: #FFEA56;
+    --yellow-dark500: #FFE31D;
+    --yellow-dark600: #E3C700;
+    --yellow-dark700: #AB9500;
+
+    /* 🧡 ORANGE */
+    --orange-light100: #FFEDD3;
+    --orange-light200: #FFDBA7;
+    --orange-light300: #FFC97C;
+    --color-orange: #FFB750;
+    --orange-dark500: #FFA018;
+    --orange-dark600: #DF8300;
+    --orange-dark700: #A86300;
+
+    /* ❤️ RED */
+    --red-light100: #FFDEDE;
+    --red-light200: #FFBCBD;
+    --red-light300: #FE9B9C;
+    --color-red: #FE797B;
+    --red-dark500: #FE3B3E;
+    --red-dark600: #EF171B;
+    --red-dark700: #BA0104;
+
+    /* ⚫ NEUTROS Y TEXTO */
+    --text-color: #0C0219;
+    --bg-color: #FFFFFF;
+    --gray-light: #F5F5F5;
+    --white: #FFFFFF;
+
+
+    /* Tipografías */
+    --font-title: 'Chewy',
+        system-ui;
+    --font-subtitle: 'Amatic SC',
+        sans-serif;
+    --font-body: 'Nunito', sans-serif;
+
+    /* Tamaños (Desktop base) */
+    --h1: 50px;
+    --h2: 42px;
+    --h3: 32px;
+    --h4: 25px;
+    --subtitle-1: 28px;
+    --subtitle-2: 22px;
+    --body-1: 20px;
+    --body-2: 18px;
+    --body-3: 16px;
+    --button: 16px;
+    --caption: 12px;
+
+    /* Espaciados */
+    --radius: 12px;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 📱 Escalas responsivas */
+@media (max-width: 1024px) {
+    :root {
+        --h1: 40px;
+        --h2: 34px;
+        --h3: 26px;
+        --h4: 20px;
+        --subtitle-1: 24px;
+        --subtitle-2: 18px;
+        --body-1: 18px;
+        --body-2: 16px;
+        --body-3: 14px;
+        --button: 14px;
+        --caption: 11px;
+
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --h1: 32px;
+        --h2: 28px;
+        --h3: 22px;
+        --h4: 18px;
+        --subtitle-1: 20px;
+        --subtitle-2: 16px;
+        --body-1: 16px;
+        --body-2: 14px;
+        --body-3: 12px;
+        --button: 12px;
+        --caption: 10px;
+    }
+}
+
+/* 🌈 ESTILOS BASE */
+body {
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-title);
+    color: var(--text-color);
+    line-height: 1.2;
+    margin: 0;
+}
+
+h1 {
+    margin: 0;
+    font-size: var(--h1);
+}
+
+h2 {
+    margin: 0;
+    font-size: var(--h2);
+}
+
+h3 {
+    margin: 0;
+    font-size: var(--h3);
+}
+
+h4 {
+    margin: 0;
+    font-size: var(--h4);
+}
+
+.subtitle1 {
+    font-family: var(--font-subtitle);
+    font-size: var(--subtitle-1);
+    font-weight: bold;
+}
+
+.subtitle2 {
+    font-family: var(--font-subtitle);
+    font-size: var(--subtitle-2);
+}
+
+p,
+li {
+    font-size: var(--body-1);
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+
+/* 🔘 BOTONES BASE — unificados para <button> y <a> */
+button,
+.btn,
+a.btn {
+    font-family: var(--font-body);
+    font-size: var(--button);
+    font-weight: 700;
+    border-radius: var(--radius);
+    border: none;
+    padding: 0.7rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: var(--white);
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+/* --- Botones rellenos --- */
+.btn-violet,
+a.btn-violet {
+    background-color: var(--color-violet);
+}
+
+.btn-cyan,
+a.btn-cyan {
+    background-color: var(--color-cyan);
+}
+
+.btn-red,
+a.btn-red {
+    background-color: var(--color-red);
+}
+
+/* Hover */
+.btn-violet:hover,
+a.btn-violet:hover {
+    background-color: var(--violet-light300);
+}
+
+.btn-cyan:hover,
+a.btn-cyan:hover {
+    background-color: var(--cyan-light300);
+}
+
+.btn-red:hover,
+a.btn-red:hover {
+    background-color: var(--red-light300);
+}
+
+/* Active */
+.btn-violet:active,
+a.btn-violet:active {
+    background-color: var(--violet-dark500);
+}
+
+.btn-cyan:active,
+a.btn-cyan:active {
+    background-color: var(--cyan-dark500);
+}
+
+.btn-red:active,
+a.btn-red:active {
+    background-color: var(--red-dark500);
+}
+
+/* --- Variantes outline --- */
+.btn-outline,
+a.btn-outline {
+    background-color: var(--white);
+    border: 2px solid currentColor;
+}
+
+/* Colores outline */
+.btn-outline.btn-violet,
+a.btn-outline.btn-violet {
+    border-color: var(--color-violet);
+    color: var(--color-violet);
+}
+
+.btn-outline.btn-cyan,
+a.btn-outline.btn-cyan {
+    border-color: var(--color-cyan);
+    color: var(--color-cyan);
+}
+
+.btn-outline.btn-red,
+a.btn-outline.btn-red {
+    border-color: var(--color-red);
+    color: var(--color-red);
+}
+
+/* Hover outline */
+.btn-outline.btn-violet:hover,
+a.btn-outline.btn-violet:hover {
+    background-color: var(--violet-light100);
+    border-color: var(--color-violet);
+    color: var(--color-violet);
+}
+
+.btn-outline.btn-cyan:hover,
+a.btn-outline.btn-cyan:hover {
+    background-color: var(--cyan-light100);
+    border-color: var(--color-cyan);
+    color: var(--color-cyan);
+}
+
+.btn-outline.btn-red:hover,
+a.btn-outline.btn-red:hover {
+    background-color: var(--red-light100);
+    border-color: var(--color-red);
+    color: var(--color-red);
+}
+
+/* Active outline */
+.btn-outline.btn-violet:active,
+a.btn-outline.btn-violet:active {
+    background-color: var(--violet-light200);
+    border-color: var(--violet-dark600);
+    color: var(--violet-dark600);
+}
+
+.btn-outline.btn-cyan:active,
+a.btn-outline.btn-cyan:active {
+    background-color: var(--cyan-light200);
+    border-color: var(--cyan-dark600);
+    color: var(--cyan-dark600);
+}
+
+.btn-outline.btn-red:active,
+a.btn-outline.btn-red:active {
+    background-color: var(--red-light200);
+    border-color: var(--red-dark600);
+    color: var(--red-dark600);
+}
+
+/* --- Efecto general de hover --- */
+button.btn:hover,
+a.btn:hover {
+    transform: translateY(-2px);
+}
+
+/* --- Asegurar estilo coherente para links tipo botón --- */
+a.btn {
+    text-decoration: none;
+}
+
+
+/* ✨ UTILIDADES */
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.shadow {
+    box-shadow: var(--shadow);
+}
+
+.rounded {
+    border-radius: var(--radius);
+}

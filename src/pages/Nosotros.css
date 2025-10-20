@@ -1,0 +1,362 @@
+.nosotros {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* 📖 Historia */
+.historia {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 5%;
+    background-color: var(--white);
+}
+
+.historia-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.historia-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.historia-text p {
+    color: var(--text-color);
+    font-size: var(--body-3);
+    margin: 0;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+/* Galería */
+.historia-gallery {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.historia-img.main img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.historia-subimages {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.historia-subimages img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .historia-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .historia-gallery {
+        width: 100%;
+    }
+
+    .historia-subimages {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .historia-img.main img {
+        height: 250px;
+    }
+
+    .historia-subimages img {
+        height: 120px;
+    }
+}
+
+/* 🎯 Misión y Visión */
+.mision-vision {
+    background-color: var(--violet-light100);
+    padding: 5rem 0;
+}
+
+.mv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    text-align: center;
+}
+
+.mv-grid p {
+    max-width: 90%;
+    margin: auto;
+    font-size: var(--body-2);
+    color: var(--text-color);
+}
+
+.card-body {
+    font-family: var(--font-body);
+    font-size: var(--body-3);
+    padding: 0.5rem;
+    text-align: center;
+    line-height: normal;
+}
+
+/* 🌈 VALORES INSTITUCIONALES */
+.valores {
+    padding: 5rem 5%;
+    background-color: var(--white);
+    text-align: center;
+}
+
+/* 🎯 Grid centrado y con espaciado uniforme */
+.valores-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    justify-items: center;
+    align-items: center;
+    padding: 3rem 0;
+}
+
+/* 🃏 Contenedor externo */
+.valor-card {
+    width: 100%;
+    max-width: 280px;
+    height: 180px;
+    perspective: 1000px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transform-origin: center center;
+    /* ✅ Flip y escala centrados en ambos ejes */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.4s ease, z-index 0.3s ease;
+    position: relative;
+}
+
+/* 🔄 Estructura interna */
+.valor-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.7s ease;
+    transform-origin: center center;
+}
+
+/* 🔁 Estado volteado */
+.valor-card.flipped .valor-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* 🎨 Caras */
+.valor-card-front,
+.valor-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    color: var(--white);
+    box-shadow: var(--shadow);
+}
+
+/* 🖋 Título frontal */
+.valor-card-front h3 {
+    font-family: var(--font-title);
+    font-size: var(--h4);
+    color: var(--white);
+    margin: 0;
+    letter-spacing: 1px;
+    text-align: center;
+    font-weight: 100;
+}
+
+/* 🔁 Reverso */
+.valor-card-back {
+    transform: rotateY(180deg);
+    font-family: var(--font-body);
+    font-size: var(--body-3);
+    padding: 0 0.5rem;
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* ✨ Hover (solo desktop) */
+@media (hover: hover) {
+    .valor-card:hover {
+        transform: scale(1.1);
+        z-index: 5;
+        /* ✅ Evita que tape otras cards */
+        transform-origin: center center;
+        /* ✅ Escala centrada vertical y horizontal */
+    }
+
+    .valor-card:hover .valor-card-inner {
+        transform: rotateY(180deg);
+    }
+}
+
+/* 🎨 Colores */
+.valor-card.violet .valor-card-front,
+.valor-card.violet .valor-card-back {
+    background-color: var(--violet-dark500);
+}
+
+.valor-card.cyan .valor-card-front,
+.valor-card.cyan .valor-card-back {
+    background-color: var(--cyan-dark500);
+}
+
+.valor-card.green .valor-card-front,
+.valor-card.green .valor-card-back {
+    background-color: var(--color-red);
+}
+
+.valor-card.yellow .valor-card-front,
+.valor-card.yellow .valor-card-back {
+    background-color: var(--yellow-dark500);
+}
+
+.valor-card.orange .valor-card-front,
+.valor-card.orange .valor-card-back {
+    background-color: var(--orange-dark500);
+}
+
+.valor-card.red .valor-card-front,
+.valor-card.red .valor-card-back {
+    background-color: var(--green-dark500);
+}
+
+/* 🔹 Responsividad */
+@media (max-width: 992px) {
+    .valores-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .valores-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .valor-card {
+        max-width: 100%;
+        height: 180px;
+    }
+}
+
+/* --- DOCENTES --- */
+.docentes {
+    padding: 6rem 0 5rem;
+    background-color: var(--violet-light100);
+}
+
+.docentes-content {
+    max-width: 850px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    color: var(--text-color);
+    font-size: var(--body-1);
+    line-height: 1.7;
+}
+
+.docentes-content strong {
+    font-weight: bold;
+}
+
+.docentes-collage {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.2rem;
+    justify-items: center;
+}
+
+.docente-img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.docente-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* 🔻 Responsive */
+@media (max-width: 1024px) {
+    .docentes-collage {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .docentes-collage {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* ✨ Cierre */
+.cierre {
+    background-color: var(--color-cyan);
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.cierre h2 {
+    font-size: var(--h2);
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.2;
+    color: var(--white);
+    font-weight: 100;
+}
+
+/* 📱 Responsive */
+@media (max-width: 992px) {
+
+    .historia,
+    .equipo {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .historia-text,
+    .equipo-text,
+    .historia-img,
+    .equipo-img {
+        width: 100%;
+    }
+
+    .mv-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,171 @@
+.academia-page {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* 🎓 MODELO PEDAGÓGICO */
+.modelo-pedagogico {
+    background-color: var(--violet-light100);
+    padding: 5rem 5%;
+    text-align: center;
+}
+
+.modelo-pedagogico .intro {
+    max-width: 800px;
+    margin: 1.5rem auto 3rem;
+    font-size: var(--body-2);
+}
+
+.modelo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.modelo-card {
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    color: var(--white);
+    padding-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.modelo-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.modelo-card h3 {
+    font-family: var(--font-title);
+    font-size: var(--h4);
+    margin: 1rem 0 0.5rem;
+}
+
+.modelo-card p {
+    font-size: var(--body-3);
+    padding: 0 1rem;
+}
+
+/* Colores */
+.modelo-card.violet {
+    background-color: var(--violet-dark500);
+}
+
+.modelo-card.cyan {
+    background-color: var(--cyan-dark500);
+}
+
+.modelo-card:hover {
+    transform: scale(1.03);
+}
+
+/* 🧩 ÁREAS DE FORMACIÓN */
+.areas-formacion {
+    padding: 5rem 5%;
+    background-color: var(--white);
+    text-align: center;
+}
+
+.areas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.area-card {
+    background-color: var(--violet-light200);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.area-card:hover {
+    transform: translateY(-5px);
+    background-color: var(--violet-light300);
+}
+
+/* 🇬🇧 PROYECTO DE INGLÉS */
+.proyecto-ingles {
+    background-color: var(--cyan-light100);
+    padding: 5rem 5%;
+}
+
+.proyecto-flex {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.proyecto-text p {
+    margin: 1rem 0;
+}
+
+.proyecto-img img {
+    width: 100%;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+/* 🌟 EDUCACIÓN INTEGRAL */
+.educacion-integral {
+    background-color: var(--yellow-light100);
+    padding: 5rem 5%;
+}
+
+.integral-flex {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.integral-flex img {
+    width: 50%;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.integral-text blockquote {
+    margin-top: 1.5rem;
+    font-style: italic;
+    color: var(--violet-dark600);
+    font-weight: 600;
+}
+
+/* CTA FINAL */
+.cta-final {
+    text-align: center;
+    background-color: var(--violet-dark600);
+    color: var(--white);
+    padding: 4rem 2rem;
+}
+
+.cta-final h2 {
+    margin-bottom: 1.5rem;
+}
+
+.cta-final .btn {
+    font-size: var(--button);
+}
+
+/* 🔹 RESPONSIVE */
+@media (max-width: 992px) {
+    .modelo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .proyecto-flex,
+    .integral-flex {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .integral-flex img {
+        width: 100%;
+    }
+}

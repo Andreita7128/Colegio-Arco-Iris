@@ -1,0 +1,204 @@
+/* --- HERO BANNER PRINCIPAL --- */
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 90vh;
+    overflow: hidden;
+    background-color: var(--color-cyan);
+}
+
+/* 🌅 Contenedor de imágenes superpuestas */
+.hero-bg-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    transform: scale(1.05);
+    filter: brightness(0.9);
+}
+
+/* 🎨 Degradado y overlay */
+.hero-degree {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* ✨ Contenido */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 3;
+    max-width: 55%;
+    padding-left: 6%;
+    color: var(--white);
+    gap: 0.8rem;
+    margin-bottom: 6rem;
+    animation: fadeInUp 1.3s ease forwards;
+}
+
+.hero-logo {
+    width: 22%;
+    max-width: 140px;
+    margin-bottom: 0.5rem;
+}
+
+.hero h1 {
+    font-family: var(--font-title);
+    font-size: var(--h1);
+    line-height: 1.1;
+    color: var(--white);
+    margin: 0;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.hero h1 span.violet {
+    color: var(--violet-light200);
+}
+
+.hero h1 span.yellow {
+    color: var(--color-yellow);
+}
+
+.hero h1 span.orange {
+    color: var(--color-orange);
+}
+
+.hero h1 span.red {
+    color: var(--color-red);
+}
+
+.hero p {
+    font-size: var(--body-1);
+    max-width: 480px;
+    color: var(--white);
+    opacity: 0.95;
+    margin: 1rem 0 1.5rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+/* 🔘 Botones */
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.button-violet {
+    width: 230px;
+}
+
+/* ☁️ NUBE DECORATIVA */
+.cloud {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-top: -120px;
+    z-index: 4;
+    pointer-events: none;
+}
+
+/* 🌈 Animación */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        padding: 5rem 2rem;
+    }
+
+    .hero-bg,
+    .hero-degree {
+        opacity: 0.45;
+    }
+
+    .hero-content {
+        padding: 0;
+        max-width: 90%;
+        margin-bottom: 3rem;
+        animation: none;
+    }
+
+    .hero h1 {
+        font-size: var(--h2);
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+    }
+
+    .hero p {
+        font-size: var(--body-2);
+        margin: 1rem auto 2rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-logo {
+        width: 28%;
+        margin: 0 auto 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        min-height: 75vh;
+    }
+
+    .hero h1 {
+        font-size: var(--h3);
+    }
+
+    .hero p {
+        font-size: var(--body-3);
+    }
+
+    .hero-buttons button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .cloud {
+        margin-top: -40px;
+    }
+}
