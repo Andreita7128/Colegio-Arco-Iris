@@ -7,7 +7,6 @@ import "./Academia.css"
 import bannerAcademia from "../assets/banner-academia.jpg"
 import montessoriImg from "../assets/montessori.jpg"
 import tradicionalImg from "../assets/tradicional.jpg"
-import inglesImg from "../assets/proyecto-ingles.jpg"
 import integralImg from "../assets/educacion-integral.jpg"
 
 export default function Academia() {
@@ -48,8 +47,9 @@ export default function Academia() {
                             <img src={montessoriImg} alt="Método Montessori en el aula" />
                             <h3>Método Montessori</h3>
                             <p>
-                                Favorece la independencia y el aprendizaje activo mediante
-                                materiales sensoriales, exploración y libertad guiada.
+                                Fomentamos el aprendizaje activo, el descubrimiento y la autoexpresión. Cada
+                                niño y niña aprende a su propio ritmo, explorando su entorno con curiosidad y
+                                desarrollando la autonomía y la toma de decisiones responsables.
                             </p>
                         </div>
 
@@ -57,8 +57,9 @@ export default function Academia() {
                             <img src={tradicionalImg} alt="Enseñanza tradicional" />
                             <h3>Enfoque Tradicional</h3>
                             <p>
-                                Acompañamiento docente constante, formación sólida en valores y
-                                fortalecimiento de las competencias básicas.
+                                Fortalecemos los procesos académicos con disciplina, acompañamiento
+                                constante y desarrollo del pensamiento crítico. Nos gusta promover la excelencia
+                                a través del compromiso, el trabajo y la constancia.
                             </p>
                         </div>
                     </div>
@@ -75,29 +76,32 @@ export default function Academia() {
                         titleColor="#A587CA"
                         align="center"
                     />
+
                     <div className="areas-grid">
                         {[
-                            "Lengua Castellana",
-                            "Matemáticas",
-                            "Ciencias Naturales",
-                            "Ciencias Sociales",
-                            "Inglés",
-                            "Educación Artística",
-                            "Educación Física",
-                            "Formación en Valores",
+                            { name: "Lengua Castellana", color: "violet" },
+                            { name: "Matemáticas", color: "cyan" },
+                            { name: "Ciencias Naturales", color: "green" },
+                            { name: "Ciencias Sociales", color: "yellow" },
+                            { name: "Inglés", color: "orange" },
+                            { name: "Educación Artística", color: "red" },
+                            { name: "Educación Física", color: "cyan-dark" },
+                            { name: "Formación en Valores", color: "violet-dark" },
                         ].map((area, i) => (
-                            <div key={i} className="area-card">
-                                <h4>{area}</h4>
+                            <div key={i} className={`area-card ${area.color}`}>
+                                <h4>{area.name}</h4>
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* 🇬🇧 Proyecto de Inglés */}
-            <section className="proyecto-ingles">
-                <div className="container proyecto-flex">
-                    <div className="proyecto-text">
+
+            {/* 🇬🇧 PROYECTO TALKING ENGLISH */}
+            <section className="talking-english">
+                <div className="container talking-layout">
+                    {/* 🧠 Texto e introducción */}
+                    <div className="talking-text">
                         <SectionTitle
                             subtitle="Proyecto Institucional"
                             title="Talking English"
@@ -105,19 +109,39 @@ export default function Academia() {
                             titleColor="#FE797B"
                             align="left"
                         />
+
                         <p>
-                            Desde los primeros grados, nuestros estudiantes fortalecen el idioma
-                            inglés a través del proyecto <strong>“Talking English”</strong>, una
-                            propuesta lúdica y comunicativa que promueve la oralidad, la
-                            creatividad y la confianza al hablar.
+                            El <strong>Proyecto Talking English</strong> es una iniciativa que impulsa el
+                            <strong> aprendizaje del inglés desde la primera infancia</strong>, fortaleciendo las
+                            cuatro habilidades comunicativas: <strong>listening, speaking, reading y writing.</strong>
                         </p>
                         <p>
-                            Con dramatizaciones, canciones, ferias temáticas y juegos, el inglés se
-                            convierte en una herramienta viva que conecta con su entorno y cultura.
+                            A través de una <strong>metodología lúdico–pedagógica</strong>, los estudiantes aprenden
+                            de manera <strong>activa y significativa</strong>, incorporando el idioma en su vida cotidiana
+                            mediante <strong>canciones, juegos, dramatizaciones y actividades culturales</strong> como el
+                            <em> English Day</em>, <em> Family Day</em> o el <em> Christmas Show.</em>
+                        </p>
+                        <p>
+                            Este programa cuenta con la guía de <strong>docentes especializados y personal nativo</strong>,
+                            quienes garantizan una <strong>pronunciación natural</strong>, una
+                            <strong> comprensión auditiva sólida</strong> y una
+                            <strong> experiencia de aprendizaje inmersiva.</strong>
+                        </p>
+                        <p>
+                            Así, el <strong>Colegio Arco Iris</strong> fomenta en sus estudiantes la
+                            <strong> confianza para comunicarse en un segundo idioma</strong> y amplía sus
+                            <strong> oportunidades en un mundo cada vez más global.</strong>
                         </p>
                     </div>
-                    <div className="proyecto-img">
-                        <img src={inglesImg} alt="Proyecto Talking English" />
+
+                    {/* 📸 Galería de imágenes */}
+                    <div className="talking-gallery">
+                        <img src="/src/assets/talking1.jpg" alt="Niños en clase de inglés con juegos" />
+                        <img src="/src/assets/talking2.jpg" alt="Actividad English Day con presentaciones" />
+                        <img src="/src/assets/talking3.jpg" alt="Docente nativa interactuando con estudiantes" />
+                        <img src="/src/assets/talking4.jpg" alt="Family Day en el proyecto Talking English" />
+                        <img src="/src/assets/talking5.jpg" alt="Dramatización en inglés en el aula" />
+                        <img src="/src/assets/talking6.jpg" alt="Estudiantes presentando el Christmas Show" />
                     </div>
                 </div>
             </section>
@@ -150,7 +174,7 @@ export default function Academia() {
             <section className="cta-final">
                 <div className="container">
                     <h2>¿Quieres conocer más sobre nuestra propuesta educativa?</h2>
-                    <a href="/contacto" className="btn btn-violet">
+                    <a href="/contacto" className="btn btn-red">
                         Contáctanos
                     </a>
                 </div>

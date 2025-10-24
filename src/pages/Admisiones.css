@@ -1,0 +1,163 @@
+.admisiones-page {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* 💬 Introducción */
+.admisiones-intro {
+    text-align: center;
+    font-size: var(--body-1);
+    color: var(--text-color);
+    line-height: 1.7;
+    margin: 3rem auto;
+}
+
+/* 📋 Requisitos */
+.admisiones-requisitos {
+    padding: 4rem 5%;
+    background-color: var(--white);
+}
+
+.requisitos-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem auto;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.requisitos-list li {
+    background-color: var(--cyan-light100);
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius);
+    font-size: var(--body-2);
+    text-align: left;
+    box-shadow: var(--shadow);
+}
+
+/* 🪜 Proceso de Admisión */
+.admisiones-proceso {
+    padding: 5rem 5%;
+}
+
+.proceso-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.proceso-card {
+    background: var(--white);
+    padding: 2rem 1.5rem;
+    border-radius: var(--radius);
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proceso-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.proceso-num {
+    background-color: var(--color-violet);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1.3rem;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+}
+
+.proceso-card h3 {
+    font-family: var(--font-title);
+    font-size: var(--h4);
+    margin: 0.5rem 0;
+    color: var(--violet-dark700);
+}
+
+.proceso-card p {
+    font-size: var(--body-2);
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+/* 📝 Formulario */
+.admisiones-form {
+    background-color: var(--yellow-light100);
+    padding: 5rem 5%;
+}
+
+.formulario {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 2rem auto 0 auto;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group.full {
+    grid-column: span 2;
+}
+
+label {
+    font-weight: 600;
+    font-size: var(--body-3);
+    color: var(--text-color);
+}
+
+input,
+textarea {
+    padding: 0.8rem 1rem;
+    border: 1.5px solid #ddd;
+    border-radius: var(--radius);
+    font-family: var(--font-body);
+    font-size: var(--body-2);
+    transition: border-color 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--color-violet);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* 🔹 Responsive */
+@media (max-width: 992px) {
+    .proceso-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .formulario {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .proceso-grid {
+        grid-template-columns: 1fr;
+    }
+}

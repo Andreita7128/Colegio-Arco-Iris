@@ -1,15 +1,15 @@
 import PageBanner from "../components/PageBanner"
 import Degradado from "../assets/Degradado-amarillo.png"
-import BannerNosotros from "../assets/banner-nosotros.jpg"
+import BannerNosotros from "../assets/Nosotros/banner-nosotros.jpg"
 import SectionTitle from "../components/SectionTitle"
 import { useEffect } from "react";
 
-import Docente1Img from "../assets/profe1.jpg"
+import Docente1Img from "../assets/Nosotros/profe1.jpg"
 
 import "./Nosotros.css"
 
 // 📸 Importa tus imágenes aquí
-import historiaImg from "../assets/historia-colegio.jpg"
+import historiaImg from "../assets/Nosotros/historia-colegio.jpg"
 
 
 export default function Nosotros() {
@@ -36,10 +36,9 @@ export default function Nosotros() {
             <PageBanner
                 image={BannerNosotros}
                 gradientImage={Degradado}
-                subtitle="Conócenos"
                 title="Nuestra Historia y Propósito"
                 titleColor="#FFFFFF"
-                subtitleColor="#FFEA56"
+                subtitleColor="#252525"
                 objectPosition="top" // opcional: 'top', 'center', 'center 30%', etc.
             />
 

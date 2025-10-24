@@ -41,11 +41,13 @@
     font-family: var(--font-title);
     font-size: var(--h4);
     margin: 1rem 0 0.5rem;
+    color: var(--white);
+    font-weight: 100;
 }
 
 .modelo-card p {
     font-size: var(--body-3);
-    padding: 0 1rem;
+    padding: 0 2rem;
 }
 
 /* Colores */
@@ -71,46 +73,150 @@
 .areas-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
+    gap: 2rem;
     margin-top: 3rem;
 }
 
+/* 🎨 Card base */
 .area-card {
-    background-color: var(--violet-light200);
     border-radius: var(--radius);
-    padding: 1.5rem;
-    font-weight: 600;
-    color: var(--text-color);
+    padding: 2rem 1rem;
     box-shadow: var(--shadow);
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
+.area-card h4 {
+    color: var(--white);
+    font-weight: 100;
+    font-size: var(--h4);
+}
+
+/* 🎨 Colores individuales */
+.area-card.violet {
+    background-color: var(--color-violet);
+}
+
+.area-card.cyan {
+    background-color: var(--color-cyan);
+}
+
+.area-card.green {
+    background-color: var(--color-green);
+}
+
+.area-card.yellow {
+    background-color: var(--color-yellow);
+}
+
+.area-card.orange {
+    background-color: var(--color-orange);
+}
+
+.area-card.red {
+    background-color: var(--color-red);
+}
+
+.area-card.cyan-dark {
+    background-color: var(--cyan-dark500);
+}
+
+.area-card.violet-dark {
+    background-color: var(--violet-dark500);
+}
+
+/* ✨ Hover */
 .area-card:hover {
-    transform: translateY(-5px);
-    background-color: var(--violet-light300);
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* 🇬🇧 PROYECTO DE INGLÉS */
-.proyecto-ingles {
-    background-color: var(--cyan-light100);
+/* 📱 Responsive */
+@media (max-width: 768px) {
+    .area-card {
+        font-size: var(--body-3);
+        padding: 1.5rem 0.8rem;
+    }
+}
+
+
+/* 🇬🇧 TALKING ENGLISH */
+.talking-english {
+    background-color: var(--violet-light100);
     padding: 5rem 5%;
 }
 
-.proyecto-flex {
-    display: flex;
-    align-items: center;
+/* 🧩 Estructura principal */
+.talking-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 3rem;
+    align-items: center;
 }
 
-.proyecto-text p {
-    margin: 1rem 0;
+/* 🧠 Texto */
+.talking-text p {
+    font-size: var(--body-2);
+    color: var(--text-color);
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
 }
 
-.proyecto-img img {
+.talking-text strong {
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+/* 📸 Galería */
+.talking-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 180px);
+    gap: 1rem;
+}
+
+.talking-gallery img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.talking-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* 📱 Responsivo */
+@media (max-width: 992px) {
+    .talking-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .talking-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 150px);
+    }
+
+    .talking-text {
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .talking-gallery {
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+    }
+
+    .talking-gallery img {
+        height: 180px;
+    }
+}
+
+
 
 /* 🌟 EDUCACIÓN INTEGRAL */
 .educacion-integral {
@@ -141,12 +247,13 @@
 .cta-final {
     text-align: center;
     background-color: var(--violet-dark600);
-    color: var(--white);
     padding: 4rem 2rem;
 }
 
 .cta-final h2 {
     margin-bottom: 1.5rem;
+    color: var(--white);
+    font-weight: 100;
 }
 
 .cta-final .btn {

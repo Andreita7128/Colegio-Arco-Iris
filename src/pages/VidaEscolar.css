@@ -1,0 +1,103 @@
+.vida-section {
+    padding: 5rem 5%;
+}
+
+.vida-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.vida-container.reverse {
+    flex-direction: row-reverse;
+}
+
+/* 🖋 Texto */
+.vida-texto {
+    flex: 1 1 45%;
+}
+
+.vida-texto p {
+    line-height: 1.6;
+    font-size: var(--body-2);
+    margin-top: 1rem;
+    text-align: justify;
+    color: var(--text-color);
+}
+
+/* 🖼️ Imágenes */
+.vida-imagenes-grid {
+    flex: 1 1 50%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.vida-imagenes-grid img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.vida-imagenes-grid img:hover {
+    transform: scale(1.03);
+}
+
+/* 🔹 Fondos */
+.bg-violet-light {
+    background-color: var(--violet-light100);
+}
+
+.bg-cyan-light {
+    background-color: var(--cyan-light100);
+}
+
+/* 🩷 Cierre */
+.vida-final {
+    background: var(--violet-dark600);
+    color: white;
+    text-align: center;
+    padding: 3rem 1rem;
+    font-size: var(--body-1);
+    font-family: var(--font-subtitle);
+    letter-spacing: 1px;
+}
+
+/* 📱 Responsive */
+@media (max-width: 992px) {
+    .vida-container {
+        flex-direction: column !important;
+    }
+
+    .vida-texto {
+        text-align: center;
+    }
+
+    .vida-imagenes-grid {
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+    }
+
+    .vida-imagenes-grid img {
+        height: 160px;
+    }
+}
+
+@media (max-width: 600px) {
+    .vida-imagenes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .vida-imagenes-grid img {
+        height: 180px;
+    }
+
+    .vida-final {
+        font-size: var(--body-2);
+    }
+}

@@ -12,14 +12,14 @@
     font-size: clamp(1rem, 2vw, 1.6rem);
     letter-spacing: 1px;
     margin: 0;
-    font-weight: 700;
+    font-weight: bolder;
     text-transform: uppercase;
 }
 
 /* Título principal */
 .section-main {
     font-family: var(--font-title);
-    font-weight: 700;
+    font-weight: 100;
     font-size: clamp(2rem, 4vw, 3rem);
     line-height: 1.1;
     margin: 0;

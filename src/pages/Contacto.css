@@ -1,0 +1,120 @@
+.contacto-page {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* 📍 Información */
+.contact-info {
+    padding: 4rem 5%;
+    text-align: center;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.info-card {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.info-card h3 {
+    color: var(--color-violet);
+    font-family: var(--font-title);
+    font-size: var(--h4);
+    margin-bottom: 0.5rem;
+}
+
+.info-card p {
+    color: var(--text-color);
+    font-size: var(--body-2);
+    margin: 0.3rem 0;
+}
+
+/* 🗺️ Mapa */
+.map-section {
+    background-color: var(--violet-light100);
+    padding: 4rem 0;
+}
+
+.map-section iframe {
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+/* 📬 Formulario */
+.contact-form {
+    background-color: var(--yellow-light100);
+    padding: 5rem 5%;
+}
+
+.formulario {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 2rem auto 0 auto;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group.full {
+    grid-column: span 2;
+}
+
+label {
+    font-weight: 600;
+    font-size: var(--body-3);
+    color: var(--text-color);
+}
+
+input,
+textarea {
+    padding: 0.8rem 1rem;
+    border: 1.5px solid #ddd;
+    border-radius: var(--radius);
+    font-family: var(--font-body);
+    font-size: var(--body-2);
+    transition: border-color 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--color-cyan);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* 🧩 Responsive */
+@media (max-width: 992px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .formulario {
+        grid-template-columns: 1fr;
+    }
+}
